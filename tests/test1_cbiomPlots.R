@@ -103,7 +103,7 @@ head(p3_col)
 
 par(mar = c(bottom_mar, left_mar, top_mar, right_mar))
 
-title = "Panel 3: This is a character matrix! (The levels apply to the entire matrix)"
+title = "Panel 3: This is a character matrix (The levels apply to the entire matrix)"
 plot_image(dat = p3_dat, col_key = p3_col, title = title)
 
 #------------------------------- 4. Panel 4

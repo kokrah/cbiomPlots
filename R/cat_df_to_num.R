@@ -57,10 +57,12 @@ cat_df_to_num = function(dat, col_key_list) {
     res[i,] = as.numeric(factor(x, col_levels))
   }
   
-  col_shift = sapply(res_col_levels, length)
-  col_shift = cumsum(col_shift)
-  res = sweep(res, 1, col_shift, "+") - col_shift[1]
-  
+  if (nrow(res) > 1) {
+    for (i in 1:(nrow(res) - 1)) {
+      res[i+1,] = res[i+1,] + max(res[i,], na.rm = TRUE)
+    }
+  }
+
   res_col = c()
   for (i in names(col_key_list)) {
     res_col = c(res_col, col_key_list[[i]][res_col_levels[[i]]])

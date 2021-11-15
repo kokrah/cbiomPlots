@@ -6,6 +6,7 @@
 #'  
 #' @param dat a character matrix
 #' @param col_key color key for the levels of dat (a named char vector)
+#' 
 cat_mat_to_num = function(dat, col_key) {
   if (!"matrix" %in% class(dat)) {
     stop("Stop dat must be a matrix (K.Okrah)\n")
