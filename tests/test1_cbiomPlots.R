@@ -17,6 +17,9 @@ color_list = lapply(example_data, "[[", 2)
 
 
 
+
+
+
 #------------------- Compute plot layout
 pncols = sapply(dat_list[2:4], ncol)
 
