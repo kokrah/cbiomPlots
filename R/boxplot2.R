@@ -10,7 +10,7 @@ boxplot2 = function(y, x, pt.col = NULL, ...) {
   boxplot(y ~ x, col = NA, ...)
   xp = jitter(as.numeric(factor(x)), factor = 0.9)
   if (is.null(pt.col)) {
-    col = densCols(xp, y)
+    pt.col = densCols(xp, y)
   }
   points(xp, y, pch = 19, col = pt.col)
 }
