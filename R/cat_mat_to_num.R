@@ -40,7 +40,14 @@ cat_mat_to_num = function(dat, col_key) {
   }
   
   res_col = col_key[col_levels]
-  names(res_col) = NULL
   
-  list(res = res, res_col = res_col)
+  # make legend
+  # make legend key
+  legend_shift =  (max(res) - min(res)) / length(res_col)
+  legend_breaks = seq(min(res), max(res) - legend_shift, legend_shift)
+  legend_breaks = legend_breaks + legend_shift / 2
+  legend_labels = names(res_col)
+  
+  list(res = res, res_col = res_col, legend_breaks = legend_breaks, 
+       legend_labels=legend_labels)
 }
